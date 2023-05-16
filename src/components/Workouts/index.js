@@ -8,7 +8,7 @@ import ScrollParallax from "../ScrollParallax";
 const items = [
   // "Zeus Cloud",
   // "Syncs with Google Fit",
-  "Syncs with Apple Health",
+  "Syncs with Apple Watch",
   "Track your progress easily",
   "Intuitive and clean design",
 ];

@@ -15,7 +15,7 @@ const items = [
     image2x: "/images/content/gloves-circle@2x.png",
   },
   {
-    title: "Syncs with Apple Health",
+    title: "Syncs with Apple Watch",
     image: "/images/content/bottle-circle.png",
     image2x: "/images/content/bottle-circle@2x.png",
   },
