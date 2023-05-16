@@ -17,7 +17,7 @@ const menu = [
     url: "/pricing",
   },
   {
-    title: "Class",
+    title: "Program",
     url: "/class01",
   },
   {
@@ -100,12 +100,9 @@ const Footer = () => {
             </div>
           </div>
           <div className={styles.col}>
-            <div className={styles.category}>contact</div>
+            <div className={styles.category}>Contact</div>
             <div className={styles.info}>
-              <p>43252 Borer Mountains</p>
-              <p>Zackerychester</p>
-              <p>Bahamas</p>
-              <p>732-528-4945</p>
+            <p>tawil@tawil.studio</p>
             </div>
           </div>
           <div className={styles.col}>

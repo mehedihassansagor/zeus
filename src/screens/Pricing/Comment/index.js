@@ -1,65 +1,29 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import cn from "classnames";
+import styles from "./Team.module.sass";
 import Slider from "react-slick";
+import Item from "./Item";
 import Icon from "../../../components/Icon";
 import ScrollParallax from "../../../components/ScrollParallax";
-import styles from "./Comment.module.sass";
+import Dropdown from "../../../components/Dropdown";
 
-const items = [
-  {
-    title: "Fitness",
-    url: "/class02-details",
-    image: "/images/content/plates.png",
-    image2x: "/images/content/plates@2x.png",
-    content: "Great physique",
-  },
-  {
-    title: "Gymnastic",
-    url: "/class02-details",
-    image: "/images/content/yoga-mat.png",
-    image2x: "/images/content/yoga-mat@2x.png",
-    content: "Enhanced strength",
-  },
-  {
-    title: "Basketball",
-    url: "/class02-details",
-    image: "/images/content/ball.png",
-    image2x: "/images/content/ball@2x.png",
-    content: "Relax $ work efficiently",
-  },
-  {
-    title: "Yoga",
-    url: "/class02-details",
-    image: "/images/content/yoga-mat.png",
-    image2x: "/images/content/yoga-mat@2x.png",
-    content: "Perfect physique",
-  },
-  {
-    title: "Fitness",
-    url: "/class02-details",
-    image: "/images/content/plates.png",
-    image2x: "/images/content/plates@2x.png",
-    content: "Great physique",
-  },
-  {
-    title: "Gymnastic",
-    url: "/class02-details",
-    image: "/images/content/yoga-mat.png",
-    image2x: "/images/content/yoga-mat@2x.png",
-    content: "Enhanced strength",
-  },
-];
+// data
+import { trainersList } from "../../../mocks/trainers";
 
 const SlickArrow = ({ currentSlide, slideCount, children, ...props }) => (
   <button {...props}>{children}</button>
 );
 
-const Comment = () => {
+const Team = () => {
+  const options = [];
+  trainersList.map((x) => options.push(x.title));
+
+  const [direction, setDirection] = useState(options[0]);
+
   const settings = {
-    infinite: false,
+    infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 2,
     slidesToScroll: 1,
     nextArrow: (
       <SlickArrow>
@@ -73,61 +37,58 @@ const Comment = () => {
     ),
     responsive: [
       {
-        breakpoint: 1280,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 768,
+        breakpoint: 767,
         settings: {
           slidesToShow: 2,
         },
       },
       {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-        },
+        breakpoint: 100000,
+        settings: "unslick",
       },
     ],
   };
 
   return (
-    <div className={cn("section", styles.section)}>
+    <div className={styles.section}>
       <div className={cn("container", styles.container)}>
-        <div className={styles.wrapper}>
-          <div className={styles.head}>
-            <h2 className={cn("h2", styles.title)}>Find what moves you</h2>
-            <div className={styles.info}>
-              Whether you’re a complete beginner or you want to step up your
-              routine, get the full studio experience at home with thousands of
-              classes for body, mind, and spirit.
-            </div>
+        <div className={styles.head}>
+          <h2 className={cn("h2", styles.title)}>Meet our pro trainers</h2>
+
+          <div className={styles.nav}>
+            {trainersList.map((x, index) => (
+              <button
+                className={cn(styles.btn, {
+                  [styles.active]: x.title === direction,
+                })}
+                onClick={() => setDirection(x.title)}
+                key={index}
+              >
+                {x.title}
+              </button>
+            ))}
           </div>
-          <div className={styles.wrap}>
-            <Slider className="comment-slider" {...settings}>
-              {items.map((x, index) => (
+          <Dropdown
+            className={styles.dropdown}
+            value={direction}
+            setValue={setDirection}
+            options={options}
+          />
+        </div>
+        <div className={styles.wrap}>
+          <Slider className={cn("team-slider", styles.slider)} {...settings}>
+            {trainersList
+              .find((x) => x.title === direction)
+              .courses.map((x, index) => (
                 <ScrollParallax className={styles.slide} key={index}>
-                  <Link className={cn("comment-item", styles.item)} to={x.url}>
-                    <div className={styles.preview}>
-                      <img
-                        srcSet={`${x.image2x} 2x`}
-                        src={x.image}
-                        alt={x.title}
-                      />
-                    </div>
-                    <div className={styles.subtitle}>{x.title}</div>
-                    <div className={styles.content}>{x.content}</div>
-                  </Link>
+                  <Item className={styles.item} item={x} />
                 </ScrollParallax>
               ))}
-            </Slider>
-          </div>
+          </Slider>
         </div>
       </div>
     </div>
   );
 };
 
-export default Comment;
+export default Team;

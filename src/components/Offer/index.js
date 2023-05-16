@@ -8,10 +8,10 @@ const Offer = ({ className }) => {
     <div className={cn(className, styles.section)}>
       <div className={cn("container", styles.container)}>
         <h2 className={cn("h1", styles.title)}>
-          Anywhere you want. Anytime you want.
+         Your personal trainer, powered by Zeus
         </h2>
         <Link className={cn("button", styles.button)} to="/download">
-          Start free trial
+          Download
         </Link>
       </div>
     </div>

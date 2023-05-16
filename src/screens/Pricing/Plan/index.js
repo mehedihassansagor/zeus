@@ -68,7 +68,7 @@ const data = [
     ],
   },
   {
-    title: "Pro",
+    title: "Most Popular Pro",
     color: "#FF592C",
     // description: "Fit with everyone",
     // price: "20.88",

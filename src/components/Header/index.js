@@ -20,7 +20,7 @@ const navLinks = [
     url: "/download",
   },
   {
-    title: "Class",
+    title: "Program",
     content: {
       menu: [
         {
@@ -107,6 +107,10 @@ const navLinks = [
   {
     title: "Lifestyle",
     url: "/lifestyle",
+  },
+  {
+    title: "FAQ",
+    url: "/faq",
   },
 ];
 
