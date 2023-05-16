@@ -6,8 +6,8 @@ import Image from "../Image";
 import ScrollParallax from "../ScrollParallax";
 
 const items = [
-  "Zeus Cloud",
-  "Syncs with Google Fit",
+  // "Zeus Cloud",
+  // "Syncs with Google Fit",
   "Syncs with Apple Health",
   "Track your progress easily",
   "Intuitive and clean design",
@@ -58,9 +58,6 @@ const Workouts = () => {
             ))}
           </ul>
           <div className={styles.btns}>
-            <Link className={cn("button", styles.button)} to="/pricing">
-              Choose Plan
-            </Link>
             <button className={cn("button-stroke", styles.button)}>
               Request a demo
             </button>
