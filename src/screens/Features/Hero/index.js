@@ -42,7 +42,7 @@ const items = [
 
 const Hero = ({ scrollToRef }) => {
   return (
-    <div className="container">
+    <>
       <div className={styles.hero}>
         <div className={cn("container", styles.container)}>
           <ScrollParallax className={styles.wrap}>
@@ -70,6 +70,7 @@ const Hero = ({ scrollToRef }) => {
           />
           <div className={styles.gallery}>
             <Image
+              className="img-fluid"
               srcSet={mainImgWhite}
               srcSetDark={mainImgWhite}
               src={mainImgWhite}
@@ -101,7 +102,7 @@ const Hero = ({ scrollToRef }) => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

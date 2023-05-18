@@ -18,11 +18,18 @@ function App() {
     <Router>
       <Switch>
         <Route
+          // exact
+          // path="/"
+          // render={() => (
+          //   <Page>
+          //     <Home />
+          //   </Page>
+          // )}
           exact
           path="/"
           render={() => (
             <Page>
-              <Home />
+              <Features />
             </Page>
           )}
         />

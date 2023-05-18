@@ -108,10 +108,7 @@ const navLinks = [
     title: "Lifestyle",
     url: "/lifestyle",
   },
-  {
-    title: "FAQ",
-    url: "/faq",
-  },
+  
 ];
 
 const socials = [
@@ -159,9 +156,13 @@ const Headers = () => {
           onClick={() => setVisibleNav(false)}
         >
           <Image
-            className={styles.pic}
-            src="/images/logo-dark.svg"
-            srcDark="/images/logo-light.svg"
+           className="img-fluid"
+           style={{ maxWidth: "200px"  , maxheight:"50px"}}
+            // className={styles.pic}
+            src="/images/logo-dark.png"
+            srcDark="/images/logo-light.png"
+            // src="/images/logo-dark.svg"
+            // srcDark="/images/logo-light.svg"
             alt="Zeus"
           />
         </Link>
@@ -220,9 +221,9 @@ const Headers = () => {
         </div>
         <Link
           className={cn("button-stroke button-small", styles.button)}
-          to="/"
+          to="/faq"
         >
-          Get free trial
+          FAQ
         </Link>
         <button
           className={cn(styles.burger, { [styles.active]: visibleNav })}

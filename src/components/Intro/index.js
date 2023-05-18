@@ -11,33 +11,37 @@ const Intro = ({ scrollToRef }) => {
         <div className={styles.gallery}>
           <ScrollParallax className={styles.preview} animateIn="fadeInUp">
             <img
-              srcSet="/images/content/bag@2x.png 2x"
-              src="/images/content/bag.png"
-              alt="Bag"
+              // srcSet="/images/content/bag@2x.png 2x"
+              // src="/images/content/bag.png"
+              className="img-fluid"
+              style={{ maxHeight: "560px" }}
+              alt="mainpic"
+              src="/images/content/mainpicdark1.png"
+              srcDark="/images/content/mainpiclight1.png"
             />
           </ScrollParallax>
-          <ScrollParallax className={styles.preview} animateIn="fadeInUp">
+          {/* <ScrollParallax className={styles.preview} animateIn="fadeInUp">
             <img
               srcSet="/images/content/gloves@2x.png 2x"
               src="/images/content/gloves.png"
               alt="Gloves"
             />
-          </ScrollParallax>
-          <ScrollParallax className={styles.preview} animateIn="fadeInUp">
+          </ScrollParallax> */}
+          {/* <ScrollParallax className={styles.preview} animateIn="fadeInUp">
             <img
               srcSet="/images/content/bottle-1@2x.png 2x"
               src="/images/content/bottle-1.png"
               alt="Bottle"
             />
-          </ScrollParallax>
+          </ScrollParallax> */}
         </div>
         <div className={styles.wrap}>
           <h2 className={cn("h1", styles.title)}>
             Train smarter, get stronger.
           </h2>
           <div className={styles.text}>
-            Zeus helps track your workouts, get better results, and be
-            the best version of you. Less thinking, more lifting 🔥🏀
+            Zeus helps track your workouts, get better results, and be the best
+            version of you. Less thinking, more lifting 🔥🏀
           </div>
           <Link className={cn("button", styles.button)} to="/download">
             Start free trial
