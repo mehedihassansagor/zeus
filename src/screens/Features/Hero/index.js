@@ -92,7 +92,7 @@ const Hero = ({ scrollToRef }) => {
                   className={styles.preview}
                   style={{ backgroundColor: x.color }}
                 >
-                  <img src={x.images} alt={`Step ${index}`} />
+                  <img className="img-fluid p-4" src={x.images} alt={`Step ${index}`} />
                 </div>
                 <div className={styles.number}>Step {index + 1}</div>
                 <div className={styles.subtitle}>{x.title}</div>

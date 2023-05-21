@@ -1,8 +1,12 @@
 import React from "react";
 import cn from "classnames";
 import styles from "./Hero.module.sass";
-import Subscription from "../../../components/Subscription";
 import Image from "../../../components/Image";
+
+import MainPicdowndark from "../../../change_image/main-pic-dark.png"
+import MainPicdownwhite from "../../../change_image/main-pic-white.png"
+
+
 
 const Hero = () => {
   return (
@@ -11,10 +15,10 @@ const Hero = () => {
         <div className={styles.col}>
           <div className={styles.preview}>
             <Image
-              srcSet="/images/content/download-pic@2x.png 2x"
-              srcSetDark="/images/content/download-pic-dark@2x.png 2x"
-              src="/images/content/download-pic.png"
-              srcDark="/images/content/download-pic-dark.png"
+              // src="/images/content/download-pic.png"
+              // srcDark="/images/content/download-pic-dark.png"
+              src={MainPicdownwhite}
+              srcDark={MainPicdowndark}
               alt="Download bg"
             />
           </div>
